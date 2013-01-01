@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<connector xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+http://java.sun.com/xml/ns/j2ee/connector_1_5.xsd"
+	version="1.5">
+	<display-name>JCATest Resource Adapter</display-name>
+	<vendor-name>CyberAvenue</vendor-name>
+	<eis-type>JCATest</eis-type>
+	<resourceadapter-version>1.0</resourceadapter-version>
+	<resourceadapter>
+		<resourceadapter-class>com.cyberavenue.jcatest.JCATestResourceAdapter</resourceadapter-class>
+		<outbound-resourceadapter>
+			<connection-definition id="jcatestPoolA">
+				<managedconnectionfactory-class>com.cyberavenue.jcatest.JCATestManagedConnectionFactory</managedconnectionfactory-class>
+				<connectionfactory-interface>com.cyberavenue.jcatest.JCATestConnectionFactory</connectionfactory-interface>
+				<connectionfactory-impl-class>com.cyberavenue.jcatest.JCATestConnectionFactoryImpl</connectionfactory-impl-class>
+				<connection-interface>com.cyberavenue.jcatest.JCATestConnection</connection-interface>
+				<connection-impl-class>com.cyberavenue.jcatest.JCATestConnectionImpl</connection-impl-class>
+			</connection-definition>
+			<transaction-support>NoTransaction</transaction-support>
+			<reauthentication-support>false</reauthentication-support>
+		</outbound-resourceadapter>
+	</resourceadapter>
+</connector>
